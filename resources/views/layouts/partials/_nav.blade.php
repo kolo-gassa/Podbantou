@@ -7,7 +7,7 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
+          <li class="nav-item {{ set_active_route('home_path') }}">
             <a class="nav-link" href="{{ route('home_path') }}">
               Accueil 
               <span class="sr-only">(current)</span>
@@ -24,7 +24,7 @@
               <a class="dropdown-item" href="#">Kirundi</a>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{ set_active_route('about_path') }}">
             <a class="nav-link" href="{{ route('about_path') }}">A propos de nous</a>
           </li>
         </ul>
