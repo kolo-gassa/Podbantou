@@ -11,12 +11,20 @@
 |
 */
 
+//Accueil
 Route::get('/', [ 
 	'as' => 'home_path',
 	'uses' => 'PagesController@home'
 ]);
 
-Route::get('/a-propos-de-nous', [ 
+//A propos de Podbantou
+Route::get('/a-propos-de-podbantou', [ 
 	'as' => 'about_path',
 	'uses' => 'PagesController@about'
+]);
+
+//Contact
+Route::get('/contact', [ 
+	'as' => 'contact_path',
+	'uses' => 'ContactsController@create'
 ]);

@@ -29,6 +29,10 @@
         
 
         @yield('content')
+
+
+        {{--inclusion du pied de page--}}
+        @include('layouts/partials/_footer')
         
         <!-- Bootstrap core JavaScript
         ================================================== -->

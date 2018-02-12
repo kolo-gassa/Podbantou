@@ -5,16 +5,13 @@
       </button>
 
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="collapse navbar-collapse container" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item {{ set_active_route('home_path') }}">
             <a class="nav-link" href="{{ route('home_path') }}">
               Accueil 
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langues</a>
@@ -25,7 +22,10 @@
             </div>
           </li>
           <li class="nav-item {{ set_active_route('about_path') }}">
-            <a class="nav-link" href="{{ route('about_path') }}">A propos de nous</a>
+            <a class="nav-link" href="{{ route('about_path') }}">A propos de {{config('app.name')}}</a>
+          </li>
+          <li class="nav-item {{ set_active_route('contact_path') }}">
+            <a class="nav-link" href="{{ route('contact_path') }}">Contact</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
