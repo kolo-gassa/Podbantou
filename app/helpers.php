@@ -5,7 +5,7 @@
 
     function page_title($title)
     {
-      $TITRE_APPLI = 'Podbantou';
+      $TITRE_APPLI = config('app.name');
       if($title==''){
         return $TITRE_APPLI;
       }
