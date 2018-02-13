@@ -2,11 +2,9 @@
 
 
 @section('content')
-		  
-	<div class="container">
 		<h2>Nous contacter ?</h2>
 
-		  	<form action="#" method="POST">
+		  	<form action="#" method="POST" class="card bg-light p-3 col-md-6">
 		  		{{--Name field--}}
 		  		<div class="form-group">
 		  			<label for="name" class="control-label">Nom</label>
@@ -22,7 +20,7 @@
 		  		{{--Message field--}}
 		  		<div class="form-group">
 		  			<label for="message" class="control-label">Message</label>
-		  			<textarea class="form-control" rows="6" cols="10" required="required" 
+		  			<textarea class="form-control" rows="5" cols="10" required="required" 
 		  			name="message" id="message"></textarea>
 		  		</div>
 
@@ -31,7 +29,4 @@
 		  			<button class="btn btn-primary">Envoyer</button>
 		  		</div>
 		  	</form>
-		  
-	</div>
-		  
 @stop

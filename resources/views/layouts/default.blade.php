@@ -26,14 +26,26 @@
         {{--inclusion du menu--}}
         @include('layouts/partials/_nav')
 
-        
 
-        @yield('content')
+
+
+
+        {{--Le contenu de la page--}}
+        <div class="container" style="margin-top: 20px">
+            @yield('content')
+        </div>
+
+
+
+
 
 
         {{--inclusion du pied de page--}}
-        @include('layouts/partials/_footer')
-        
+        @include('layouts/partials/_footer')        
+
+
+
+
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
