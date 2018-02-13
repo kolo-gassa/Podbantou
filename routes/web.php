@@ -11,11 +11,19 @@
 |
 */
 
+use App\Mail\ContactMessage;
+
+
 //Accueil
 Route::get('/', [ 
 	'as' => 'home_path',
 	'uses' => 'PagesController@home'
 ]);
+
+//Test email
+Route::get('/test-email', function(){
+		return new ContactMessage("Freddy Guenengafo", "freddy@yahoo.fr", "Le travail paye");
+});
 
 //A propos de Podbantou
 Route::get('/a-propos-de-podbantou', [ 
