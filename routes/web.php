@@ -28,3 +28,9 @@ Route::get('/contact', [
 	'as' => 'contact_path',
 	'uses' => 'ContactsController@create'
 ]);
+
+//Contact soumission
+Route::post('/contact', [ 
+	'as' => 'contact_path',
+	'uses' => 'ContactsController@store'
+]);
