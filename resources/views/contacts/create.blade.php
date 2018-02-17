@@ -13,14 +13,16 @@
 			  		{{--Name field--}}
 			  		<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 			  			<label for="name" class="control-label">Nom</label>
-			  			<input type="text" name="name" id="name" class="form-control" required="required">
+			  			<input type="text" name="name" id="name" class="form-control" 
+			  			required="required" value="{{old('name')}}">
 			  			{!! $errors->first('name', '<span class="help-block">:message</span>') !!}
 			  		</div>
 
 			  		{{--Email field--}}
 			  		<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 			  			<label for="email" class="control-label">Email</label>
-			  			<input type="email" name="email" id="email" class="form-control" required="required">
+			  			<input type="email" name="email" id="email" class="form-control" 
+			  			required="required" value="{{old('email')}}">
 			  			{!! $errors->first('email', '<span class="help-block">:message</span>') !!}
 			  		</div>
 
@@ -28,13 +30,13 @@
 			  		<div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
 			  			<label for="message" class="control-label">Message</label>
 			  			<textarea class="form-control" rows="5" cols="10" required="required" 
-			  			name="message" id="message"></textarea>
+			  			name="message" id="message">{{old('message')}}</textarea>
 			  			{!! $errors->first('message', '<span class="help-block">:message</span>') !!}
 			  		</div>
 
 			  		{{--Button--}}
 			  		<div class="form-group">
-			  			<button class="btn btn-primary">Envoyer</button>
+			  			<button class="btn btn-primary" type="submit">Envoyer</button>
 			  		</div>
 		  		</form>
 		  	</div>

@@ -20,11 +20,11 @@ class ContactMessage extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email, $message)
+    public function __construct($name, $email, $msg)
     {
         $this->name = $name;
         $this->email = $email;
-        $this->msg = $message;
+        $this->msg = $msg;
     }
 
     /**
@@ -34,6 +34,6 @@ class ContactMessage extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.messages.create');
+        return $this->markdown('emails.messages.created');
     }
 }
