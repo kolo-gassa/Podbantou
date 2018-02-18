@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Mail\ContactMessage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
@@ -20,11 +21,15 @@ class ContactsController extends Controller
     public function store(ContactRequest $request)
     {
 
-      $mailable = new ContactMessage($request->name, $request->email, $request->message);  
-      Mail::to('guenengafof@gmail.com')->send($mailable);
+      $message = Message::create($request->only('name', 'email', 'message'));
+      
+
+      $mailable = new ContactMessage($message);  
+      Mail::to(config('podbantou.admin_email'))->send($mailable);
       
        flashy('Nous vous repondons dans les plus brefs délais!');
 
        return redirect()->route('home_path');
     }
 }
+
