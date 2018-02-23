@@ -8,16 +8,35 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{{ route('home_path') }}">{{config('app.name')}}</a>
-      <a class="navbar-brand {{ set_active_route('home_path') }}" href="{{ route('home_path') }}">
-        Accueil
-      </a>
-      <a class="navbar-brand" href="#">Langues</a>
+
+      @if(Illuminate\Support\Facades\Auth::check())
+        <a class="navbar-brand {{ set_active_route('home_path') }}" 
+           href="{{ route('profil_path') }}">
+          MON PROFIL
+        </a>
+
+        <a class="navbar-brand" href="{{ route('logout_path') }}">
+        SE DECONNECTER
+        </a>
+      @else
+        <a class="navbar-brand {{ set_active_route('home_path') }}" 
+           href="{{ route('home_path') }}">
+           ACCUEIL
+        </a>
+
+        <a class="navbar-brand" href="{{ route('login_path') }}">
+          CONNEXION
+        </a>
+
+        <a class="navbar-brand" href="{{ route('registration_path') }}">
+          INSCRIPTION
+        </a>
+      @endif
+
       <a class="navbar-brand {{ set_active_route('about_path') }}" href="{{ route('about_path') }}">
-        A propos de {{config('app.name')}}
+        A PROPOS DE {{mb_strtoupper(config('app.name'))}}
       </a>
-      <a class="navbar-brand {{ set_active_route('contact_path') }}" href="{{ route('contact_path') }}">
-        Contact
-      </a>
+
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">

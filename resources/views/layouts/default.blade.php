@@ -35,7 +35,33 @@
 
 
 
+        @if(session('success'))
+            <div class="container" >
+                <div class="alert alert-success" >
+                    <button type="button" class="close" data-target="#id_of_panel" 
+                        data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">
+                        Close
+                        </span>
+                    </button>
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
 
+        @if(session('error'))
+            <div class="container" >
+                <div class="alert alert-danger" >
+                    <button type="button" class="close" data-target="#id_of_panel" 
+                        data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">
+                        Close
+                        </span>
+                    </button>
+                    {{ session('error') }}
+                </div>
+            </div>
+        @endif
 
         {{--Le contenu de la page--}}
         <div class="container" style="margin-top: 20px">
